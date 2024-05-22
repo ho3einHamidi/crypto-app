@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import Layout from "./Components/Layout/Layout";
+import HomePage from "./Components/HomePage/HomePage";
 
 function App() {
   return (
     <>
-      <Layout></Layout>
+      <Layout>
+        <HomePage />
+      </Layout>
     </>
   );
 }
