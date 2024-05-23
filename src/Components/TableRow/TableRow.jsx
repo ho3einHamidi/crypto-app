@@ -1,10 +1,11 @@
 import chrtUp from "../../assets/icons/chart-up.svg";
 import chrtDown from "../../assets/icons/chart-down.svg";
+import styles from "./TableRow.module.css";
 function TableRow({ coin }) {
   return (
-    <tr key={coin.id}>
+    <tr>
       <td>
-        <div>
+        <div className={styles["coin-name"]}>
           <img src={coin.image} />
           <p>{coin.symbol.toUpperCase()}</p>
         </div>

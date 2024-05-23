@@ -1,0 +1,7 @@
+.coin-name {
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 32px;
+  }
+}
