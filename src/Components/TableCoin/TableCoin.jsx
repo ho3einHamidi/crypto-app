@@ -3,13 +3,12 @@ import { Oval } from "react-loader-spinner";
 import TableRow from "../TableRow/TableRow";
 import styles from "./TableCoin.module.css";
 function TableCoin({ coins, isLoading }) {
-  console.log(coins);
   return (
     <div className={styles.container}>
       {isLoading ? (
-        <Oval height="24" width="24" radius="9" color="#3874ff" />
+        <Oval height="48" width="48" radius="9" color="#3874ff" />
       ) : (
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Coin</th>
