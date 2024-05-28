@@ -2,7 +2,7 @@ import { Oval } from "react-loader-spinner";
 
 import TableRow from "../TableRow/TableRow";
 import styles from "./TableCoin.module.css";
-function TableCoin({ coins, isLoading }) {
+function TableCoin({ coins, isLoading, chart, setChart, currency }) {
   return (
     <div className={styles.container}>
       {isLoading ? (
@@ -21,7 +21,15 @@ function TableCoin({ coins, isLoading }) {
           </thead>
           <tbody>
             {coins.map((coin) => {
-              return <TableRow key={coin.id} coin={coin} />;
+              return (
+                <TableRow
+                  chart={chart}
+                  currency={currency}
+                  setChart={setChart}
+                  key={coin.id}
+                  coin={coin}
+                />
+              );
             })}
           </tbody>
         </table>

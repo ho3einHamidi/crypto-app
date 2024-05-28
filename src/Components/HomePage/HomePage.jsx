@@ -3,12 +3,14 @@ import { getCoinList } from "../../Services/cryptoApi";
 import TableCoin from "../TableCoin/TableCoin";
 import Pagination from "../Pagination/Pagination";
 import SearchBox from "../SearchBox/SearchBox";
+import Chart from "../Chart/Chart";
 function HomePage() {
   const [coins, setCoins] = useState([]);
   const [newCoins, setNewCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [currency, setCurrency] = useState("USD");
+  const [chart, setChart] = useState(null);
   useEffect(() => {
     const getData = async () => {
       try {
@@ -23,12 +25,18 @@ function HomePage() {
     };
     getData();
   }, [page, currency]);
-  const searchHandler = () => {};
   return (
     <div>
       <SearchBox currency={currency} setCurrency={setCurrency} />
+      <TableCoin
+        chart={chart}
+        currency={currency}
+        setChart={setChart}
+        coins={coins}
+        isLoading={isLoading}
+      />
       <Pagination page={page} setPage={setPage} />
-      <TableCoin coins={coins} isLoading={isLoading} />
+      {!!chart && <Chart chart={chart} setChart={setChart} />}
     </div>
   );
 }

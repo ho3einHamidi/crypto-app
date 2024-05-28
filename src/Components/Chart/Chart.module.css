@@ -1,0 +1,25 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  .cross {
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 32px 0 0 32px;
+  }
+  .chart {
+    width: 800px;
+    margin: 0 auto;
+    border: 2px solid #404042;
+    background-color: #18181ce6;
+    border-radius: 8px;
+  }
+}

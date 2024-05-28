@@ -1,12 +1,24 @@
+import { marketChart } from "../../Services/cryptoApi";
+
 import chrtUp from "../../assets/icons/chart-up.svg";
 import chrtDown from "../../assets/icons/chart-down.svg";
-
 import styles from "./TableRow.module.css";
-function TableRow({ coin }) {
+
+function TableRow({ coin, setChart, currency }) {
+  const showHandler = async () => {
+    setChart(true);
+    const res = await fetch(marketChart(coin.id, currency));
+    const json = await res.json();
+    setChart(json);
+  };
   return (
     <tr>
       <td>
-        <div className={styles["coin-name"]}>
+        <div
+          onClick={showHandler}
+          value={coin.id}
+          className={styles["coin-name"]}
+        >
           <img src={coin.image} />
           <p>{coin.symbol.toUpperCase()}</p>
         </div>
