@@ -6,7 +6,6 @@ import SearchBox from "../SearchBox/SearchBox";
 import Chart from "../Chart/Chart";
 function HomePage() {
   const [coins, setCoins] = useState([]);
-  const [newCoins, setNewCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [currency, setCurrency] = useState("USD");

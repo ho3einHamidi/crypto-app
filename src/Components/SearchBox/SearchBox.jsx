@@ -43,7 +43,6 @@ function SearchBox({ currency, setCurrency }) {
   return (
     <div className={styles.searchBox}>
       <input
-        onClick={() => setIsResultOpen(true)}
         onChange={(e) => setText(e.target.value)}
         type="text"
         name="serach"

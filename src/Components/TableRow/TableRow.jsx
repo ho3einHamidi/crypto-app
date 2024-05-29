@@ -6,10 +6,11 @@ import styles from "./TableRow.module.css";
 
 function TableRow({ coin, setChart, currency }) {
   const showHandler = async () => {
-    setChart(true);
-    const res = await fetch(marketChart(coin.id, currency));
-    const json = await res.json();
-    setChart(json);
+    try {
+      const res = await fetch(marketChart(coin.id, currency));
+      const json = await res.json();
+      setChart({ ...json, coin });
+    } catch {}
   };
   return (
     <tr>

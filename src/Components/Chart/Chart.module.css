@@ -17,9 +17,60 @@
   }
   .chart {
     width: 800px;
-    margin: 0 auto;
+    margin: auto;
     border: 2px solid #404042;
     background-color: #18181ce6;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 16px;
+    .graph {
+      width: 760px;
+      height: 300px;
+    }
+    .name {
+      display: flex;
+      align-items: center;
+      margin: 16px;
+      gap: 16px;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+    .types {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      button {
+        width: 128px;
+        height: 32px;
+        background-color: #18181cdb;
+
+        border-radius: 8px;
+        border: 1px solid #3874ff;
+        color: #3874ff;
+        cursor: pointer;
+      }
+      .selected {
+        background-color: #3874ff;
+        color: #fff;
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 16px;
+      div {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        p {
+          color: #3744ff;
+        }
+      }
+    }
   }
 }
